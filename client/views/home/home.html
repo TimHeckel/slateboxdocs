@@ -1,0 +1,1463 @@
+<template name="home">
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <a class="brand" href="javascript:">Slatebox.js Documentation</a>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:50px;">
+    <div class="row">
+      <div class="span2 affix docMenu" data-spy="affix">
+        {{>menu}}
+      </div>
+      
+      <div class="span10" style="margin-left:200px;">
+        {{>documentation}}
+      </div>
+    </div>
+  </template>
+
+  <template name="menu">
+    <ul class="nav nav-list nav-tabs nav-stacked">
+      <li class="active">
+        <h5>Getting Started</h5>
+        <ul class="nav nav-tabs nav-stacked">
+          <li>
+            <a href="#downloadsource">Slatebox.js install</a>
+          </li>
+          <li>
+            <a href="#setuphtml">Set HTML</a>
+          </li>
+          <li>
+            <a href="#firstslate">Your first slate</a>
+          </li>
+          <li>
+            <a href="#addrelationship">Your first slate</a>
+          </li>
+          <li>
+            <a href="#coolstuff">Cool Stuff</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h5>Slate</h5>
+        <ul class="nav nav-tabs nav-stacked">
+          <li>
+            <a href="#slate_slate">Slate</a>
+            <ul class="nav sub-nav">
+              <li><a href="#exportJSON_slate">.exportJSON</a></li>
+              <li><a href="#snapshot_slate">.snapshot</a></li>
+              <li><a href="#exportDifference_slate">.exportDifference</a></li>
+              <li><a href="#loadJSON_slate">.loadJSON</a></li>
+              <li><a href="#getOrientation_slate">.getOrientation</a></li>
+              <li><a href="#disable_slate">.disable</a></li>
+              <li><a href="#enable_slate">.enable</a></li>
+              <li><a href="#present_slate">.present</a></li>
+            </ul>        
+          </li>
+          <li>
+            <a href="#slate_nodes">Nodes</a>
+            <ul class="nav sub-nav">
+              <li><a href="#addRange_nodes">.addRange</a></li>
+              <li><a href="#removeRange_nodes">.removeRange</a></li>
+              <li><a href="#add_nodes">.add</a></li>
+              <li><a href="#remove_nodes">.remove</a></li>
+              <li><a href="#addRelationship_nodes">.addRelationship</a></li>
+              <li><a href="#removeRelationship_nodes">.removeRelationship</a></li>
+              <li><a href="#closeAllMenus_nodes">.closeAllMenus</a></li>
+              <li><a href="#closeAllConnectors_nodes">.closeAllConnectors</a></li>
+              <li><a href="#one_nodes">.one</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#slate_canvas">Canvas</a>
+              <ul class="nav sub-nav">
+                <li><a href="#zoom_canvas">.zoom</a></li>
+                <li><a href="#center_canvas">.center</a></li>
+                <li><a href="#move_canvas">.move</a></li>
+                <li><a href="#scaleToFitNodes_canvas">.scaleToFitNodes</a></li>
+                <li><a href="#centerOnNodes_canvas">.centerOnNodes</a></li>
+                <li><a href="wire_canvas">.wire</a></li>
+                <li><a href="#unwire_canvas">.unwire</a></li>
+                <li><a href="#rawSVG_canvas">.rawSVG</a></li>
+                <li><a href="#darken_canvas">.darken</a></li>
+                <li><a href="#lighten_canvas">.lighten</a></li>
+                <li><a href="#get_canvas">.get</a></li>
+              </ul>
+          </li>
+          <li>
+            <a href="#slate_message">Message</a>
+              <ul class="nav sub-nav">
+                <li><a href="#show_message">.show</a></li>
+              </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h5>Nodes</h5>
+        <ul class="nav nav-tabs nav-stacked">
+          <li>
+            <a href="#node_node">Node</a>
+            <ul class="nav sub-nav">
+              <li><a href="#del_node">.del</a></li>
+              <li><a href="#serialize_node">.serialize</a></li>
+              <li><a href="#toFront_node">.toFront</a></li>
+              <li><a href="#toBack_node">.toBack</a></li>
+              <li><a href="#hide_node">.hide</a></li>
+              <li><a href="#show_node">.show</a></li>
+              <li><a href="#move_node">.move</a></li>
+              <li><a href="#zoom_node">.zoom</a></li>
+              <li><a href="#position_node">.position</a></li>
+              <li><a href="#mark_node">.mark</a></li>
+              <li><a href="#unmark_node">.unmark</a></li>
+              <li><a href="#button_node">.button</a></li>
+              <li><a href="#unbutton_node">.unbutton</a></li>
+              <li><a href="#offset_node">.offset</a></li>
+              <li><a href="#enable_node">.enable</a></li>
+              <li><a href="#disable_node">.disable</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#node_editor">Editor</a></li>
+            <ul class="nav sub-nav">
+              <li><a href="#what_editor">.what</a></li>
+            </ul>
+          <li>
+            <a href="#node_images">Images</a></li>
+            <ul class="nav sub-nav">
+              <li><a href="#what_images">.what</a></li>
+            </ul>
+          <li>
+            <a href="#node_links">Links</a>
+            <ul class="nav sub-nav">
+              <li><a href="#what_links">.what</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#node_menu">Menu</a>
+            <ul class="nav sub-nav">
+              <li><a href="#what_menu">.what</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#node_relationships">Relationships</a>
+            <ul class="nav sub-nav">
+              <li><a href="#what_relationships">.what</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#node_resize">Resize</a>
+            <ul class="nav sub-nav">
+              <li><a href="#what_resize">.what</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </template>
+
+  <template name="documentation">
+
+    <div class="row slatebox-segment" id="downloadsource">
+
+      <h4>Step 1: Download the source or link to the CDN</h4>
+      <pre><code data-language="javascript">
+        <script src="https://http://static.slatebox.com/0.5.1/slatebox.min.js"></script>
+      </code></pre>
+
+    </div>
+
+    <div class="row slatebox-segment" id="setuphtml">
+
+      <h4>Step 2: Setup your HTML</h4>
+      <pre><code data-language="html">
+        <div id='slate1'>
+        </div>
+      </code></pre>
+
+    </div>
+
+    <div class="row slatebox-segment" id="firstslate">
+
+      <h4>Create the slate and add a node</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <pre><code data-language="javascript">
+            //create an instance of Slatebox
+            var _sb = new Slatebox();
+
+            //create the slate
+            var _slate = new _sb.slate({
+            name: "My First Slate"
+            , container: "slate1"
+            , showBirdsEye: false
+            , showZoom: false
+            , showMultiSelect: false
+          }).init();
+
+          //create the node
+          var _node = new _sb.node({ 
+          text: 'My First Slate'
+          , xPos: 5025
+          , yPos: 5025
+          , height: 100
+          , width: 150
+          , vectorPath: 'roundedrectangle'
+          , backgroundColor: '90-#A61000-#FF1800'
+          , lineColor: "#333"
+          , lineWidth: 8
+        });
+
+        //add the node to the slate
+        _slate.nodes.add(_node);
+      </code></pre>
+    </div>
+    <div class="col-md-6">
+      <div id="slate1" class="slateExample" data-example="1">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row slatebox-segment" id="addrelationship">
+  <h4>Add another node and connect them</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <pre><code data-language="javascript">
+        //create another node
+        _node2 = new _sb.node({ 
+        text: 'My Second Node'
+        , xPos: 5150
+        , yPos: 5150
+        , height: 100
+        , width: 150
+        , vectorPath: 'roundedrectangle'
+        , backgroundColor: '90-#A61000-#FF1800'
+        , lineColor: "#333"
+        , lineWidth: 8
+      });
+
+      //add the second node to the slate
+      _slate.nodes.add(_node2);
+
+      //associate node2 with the first node
+      _node.relationships.addAssociation(_node2);
+
+      //move node2
+      _node2.move({
+      x: 5300
+      , y: 5190
+      , dur: 1000
+    });
+  </code></pre>
+</div>
+<div class="col-md-6">
+  <div id="slate2" class="slateExample" data-example="2">
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="row slatebox-segment" id="coolstuff">
+  <h4>You can do lots of cool stuff once the slate is created.</h4>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h5>Zoom the canvas</h5>
+      <div id="slate3" class="slateExample" data-example="3">
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h5>Add an image</h5>
+      <div id="slate4" class="slateExample" data-example="4">
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h5>Change colors & shapes</h5>
+      <div id="slate5" class="slateExample" data-example="5">
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="col-md-4">
+      <h5>Add nested relationships</h5>
+      <div id="slate6" class="slateExample" data-example="6">
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <h5>Resize for best-fit and add a birds-eye view</h5>
+      <div id="slate7" class="slateExample" data-example="7">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--slate-->
+<div class="row slatebox-segment" id="slate_slate">
+  <div class="apiMain">
+    <h1>The Slate</h1>
+    <p class="apiArguments">The slate is the parent of all nodes and has a unique set of methods.</p>
+  </div>
+
+  <div class="apiSub" id="exportJSON">
+    <code data-language="javascript" class="apiHeader">.exportJSON()</code>
+    <div class="apiIntro">
+      Using <code data-language="javascript">.exportJSON</code>, you can emit a JSON string for saving the current state of your slate. Pass this to <code data-language="javascript">.loadJSON</code> to reconstitute your slate.
+    </div>
+    <div class="apiArguments">
+      <span class="label label-success">Accepts</span> <span class="label label-important">No Arguments</span>
+    </div>
+    <div class="apiSample">
+      <pre><code data-language="javascript">
+        _slate.exportJSON(); //emits a JSON string for saving the slate
+      </code></pre>
+    </div>
+    <div class="apiReturn">
+      <span class="label label-success">Returns</span> <span class="label">string</span>
+      <div class="apiReturnDetail">
+        a JSON string representing the current slate along with its nodes and relationships.
+      </div>
+    </div>
+  </div>
+
+  <div class="apiSub" id="snapshot">
+    <code data-language="javascript" class="apiHeader">.snapshot()</code>
+    <div class="apiIntro">
+      "Snap" a picture of the current slate to use as a comparison object in <code data-language="javascript">.exportDifference</code>. This is a useful method when you want to export a comparison of a slate against itself by taking a "snapshot" before doing the comparison.
+    </div>
+    <div class="apiArguments">
+      <span class="label label-success">Accepts</span> <span class="label label-important">No Arguments</span>
+    </div>
+    <div class="apiSample">
+      <pre><code data-language="javascript">
+        _slate.snapshot(); //returns an object that can be used in tandem with .exportDifference
+      </code></pre>
+    </div>
+    <div class="apiReturn">
+      <span class="label label-success">Returns</span> <span class="label">A Snapshot Slate Instance</span>
+      <div class="apiReturnDetail">
+        a slate instance suitable for comparison in <code data-language="javascript">.exportDifference</code>.
+      </div>
+    </div>
+  </div>
+
+  <div class="apiSub" id="exportDifference">
+    <code data-language="javascript" class="apiHeader">.exportDifference(comparable, lineWidthOvveride)</code>
+    <div class="apiIntro">
+      Like <code data-language="javascript">.exportJSON</code>, except that it only exports the JSON difference between the passed-in slate and the slate you're running the method on.
+    </div>
+    <div class="apiArguments">
+      <span class="label label-success">Accepts</span>
+      <ul>
+        <li>
+          comparable <span class="label label">object</span> <span class="label label-important">required</span>
+          <p>a separate slate instance or the result of a .snapshot call</p>
+        </li>
+        <li>
+          lineWidthOverride <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">defaults to current line width</span>
+          <p>override the connecting line width a separate slate instance or the result of a .snapshot call</p>
+        </li>
+      </ul>
+    </div>
+    <div class="apiSample">
+      <pre><code data-language="javascript">
+        _slate.exportDifference(_previousSnapshot);
+      </code></pre>
+    </div>
+    <div class="apiReturn">
+      <span class="label label-success">Returns</span> <span class="label">string</span>
+      <div class="apiReturnDetail">
+        a JSON string representing the <em>difference</em> between the current slate and <code data-language="javascript">comparable</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="apiSub" id="loadJSON">
+    <code data-language="javascript" class="apiHeader">.loadJSON(jsonSlate, preserve)</code>
+    <div class="apiIntro">
+      Once you have a JSON string from <code data-language="javascript">.exportJSON</code>, you can load the JSON string using <code data-language="javascript">.loadJSON</code>.
+    </div>
+    <div class="apiArguments">
+      <span class="label label-success">Accepts</span>
+      <ul>
+        <li>
+          jsonSlate <span class="label label">string</span> <span class="label label-important">required</span>
+          <p>the exported JSON from either <code data-language="javascript">.exportJSON</code> or <code data-language="javascript">.exportDifference</code></p>
+        </li>
+        <li>
+          preserve <span class="label label">bool</span> <span class="label label-info">optional</span> <span class="label">defaults to false</span> 
+          <p>whether or not the existing slate should be preserved.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="apiSample">
+      <pre><code data-language="javascript">
+        _slate.loadJSON(JSONString); //reconstitutes the slate based on the JSONString passed in
+      </code></pre>
+    </div>
+    <div class="apiReturn">
+      <span class="label label-success">Returns</span> <span class="label">null</span>
+    </div>
+  </div>
+
+  <div class="apiSub" id="getOrientation">
+    <code data-language="javascript" class="apiHeader">.getOrientation(nodesToEvaluate)</code>
+    <div class="apiIntro">
+      Returns information on the slate's current size.
+    </div>
+    <div class="apiArguments">
+      <span class="label label-success">Accepts</span>
+      <ul>
+        <li>
+          nodesToEvaluate <span class="label label">array</span> <span class="label label-info">optional</span> <span class="label">defaults to all nodes</span>
+          <p>What nodes do you want to include when calculating the orientation details?</p>
+        </li>
+      </ul>
+    </div>
+    <div class="apiSample">
+      <pre><code data-language="javascript">
+        _slate.getOrientation(); //passing no node array will calc the orientation for ALL nodes
+      </code></pre>
+    </div>
+    <div class="apiReturn">
+      <span class="label label-success">Returns</span> <span class="label">object</span>
+      <div class="apiReturnDetail">
+        <pre><code data-language="javascript">
+          {
+            orientation: "landscape" | "portrait"
+            , height: [float]
+            , width: [float]
+            , left: [float]
+            , top: [float]
+          }
+        </code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="apiSub" id="disable">
+    <code data-language="javascript" class="apiHeader">.disable()</code>
+    <div class="apiIntro">
+      Disables all user interaction with the slate.
+    </div>
+    <div class="apiArguments">
+      <span class="label label-success">Accepts</span> <span class="label label-important">No Arguments</span>
+    </div>
+    <div class="apiSample">
+      <pre><code data-language="javascript">
+        _slate.disable();
+      </code></pre>
+    </div>
+    <div class="apiReturn">
+      <span class="label label-success">Returns</span> <span class="label">null</span>
+    </div>
+  </div>
+
+   <div class="apiSub" id="enable">
+    <code data-language="javascript" class="apiHeader">.enable()</code>
+    <div class="apiIntro">
+      Enables user interaction with the slate.
+    </div>
+    <div class="apiArguments">
+      <span class="label label-success">Accepts</span> <span class="label label-important">No Arguments</span>
+    </div>
+    <div class="apiSample">
+      <pre><code data-language="javascript">
+        _slate.enable();
+      </code></pre>
+    </div>
+    <div class="apiReturn">
+      <span class="label label-success">Returns</span> <span class="label">null</span>
+    </div>
+  </div>
+
+  <div class="apiSub" id="present">
+    <code data-language="javascript" class="apiHeader">.present(pkg)</code>
+    <div class="apiIntro">
+      .present
+    </div>
+    <div class="apiArguments">
+      <span class="label label-success">Accepts</span> <span class="label label-important">No Arguments</span>
+    </div>
+    <div class="apiSample">
+      <pre><code data-language="javascript">
+        _slate.enable();
+      </code></pre>
+    </div>
+    <div class="apiReturn">
+      <span class="label label-success">Returns</span> <span class="label">null</span>
+    </div>
+  </div>
+
+  <div class="row slatebox-segment" id="slate_nodes">
+    <div class="apiSub" id="addRange_nodes">
+      <code data-language="javascript" class="apiHeader">.addRange()</code>
+      <div class="apiIntro">
+        intro
+      </div>
+      <div class="apiArguments">
+        <span class="label label-success">Accepts</span>
+        <ul>
+          <li>
+            arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+            <p>details</p>
+          </li>
+          <li>
+            arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+            <p>details</p>
+          </li>
+        </ul>
+      </div>
+      <div class="apiSample">
+        <pre><code data-language="javascript">
+          _slate.nodes.addRange();
+        </code></pre>
+      </div>
+      <div class="apiReturn">
+        <span class="label label-success">Returns</span> <span class="label">string</span>
+        <div class="apiReturnDetail">
+          return
+        </div>
+      </div>
+    </div>
+
+    <div class="apiSub" id="removeRange_nodes">
+      <code data-language="javascript" class="apiHeader">.removeRange()</code>
+      <div class="apiIntro">
+        intro
+      </div>
+      <div class="apiArguments">
+        <span class="label label-success">Accepts</span>
+        <ul>
+          <li>
+            arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+            <p>details</p>
+          </li>
+          <li>
+            arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+            <p>details</p>
+          </li>
+        </ul>
+      </div>
+      <div class="apiSample">
+        <pre><code data-language="javascript">
+          _slate.nodes.removeRange();
+        </code></pre>
+      </div>
+      <div class="apiReturn">
+        <span class="label label-success">Returns</span> <span class="label">string</span>
+        <div class="apiReturnDetail">
+          return
+        </div>
+      </div>
+    </div>
+
+    <div class="apiSub" id="add_nodes">
+      <code data-language="javascript" class="apiHeader">.add()</code>
+      <div class="apiIntro">
+        intro
+      </div>
+      <div class="apiArguments">
+        <span class="label label-success">Accepts</span>
+        <ul>
+          <li>
+            arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+            <p>details</p>
+          </li>
+          <li>
+            arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+            <p>details</p>
+          </li>
+        </ul>
+      </div>
+      <div class="apiSample">
+        <pre><code data-language="javascript">
+          _slate.nodes.add();
+        </code></pre>
+      </div>
+      <div class="apiReturn">
+        <span class="label label-success">Returns</span> <span class="label">string</span>
+        <div class="apiReturnDetail">
+          return
+        </div>
+      </div>
+    </div>
+
+    <div class="apiSub" id="remove_nodes">
+      <code data-language="javascript" class="apiHeader">.remove()</code>
+      <div class="apiIntro">
+        intro
+      </div>
+      <div class="apiArguments">
+        <span class="label label-success">Accepts</span>
+        <ul>
+          <li>
+            arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+            <p>details</p>
+          </li>
+          <li>
+            arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+            <p>details</p>
+          </li>
+        </ul>
+      </div>
+      <div class="apiSample">
+        <pre><code data-language="javascript">
+          _slate.nodes.remove();
+        </code></pre>
+      </div>
+      <div class="apiReturn">
+        <span class="label label-success">Returns</span> <span class="label">string</span>
+        <div class="apiReturnDetail">
+          return
+        </div>
+      </div>
+    </div>
+
+    <div class="apiSub" id="addRelationship_nodes">
+      <code data-language="javascript" class="apiHeader">.addRelationship()</code>
+      <div class="apiIntro">
+        intro
+      </div>
+      <div class="apiArguments">
+        <span class="label label-success">Accepts</span>
+        <ul>
+          <li>
+            arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+            <p>details</p>
+          </li>
+          <li>
+            arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+            <p>details</p>
+          </li>
+        </ul>
+      </div>
+      <div class="apiSample">
+        <pre><code data-language="javascript">
+          _slate.nodes.addRelationship();
+        </code></pre>
+      </div>
+      <div class="apiReturn">
+        <span class="label label-success">Returns</span> <span class="label">string</span>
+        <div class="apiReturnDetail">
+          return
+        </div>
+      </div>
+    </div>
+
+    <div class="apiSub" id="removeRelationship_nodes">
+      <code data-language="javascript" class="apiHeader">.removeRelationship()</code>
+      <div class="apiIntro">
+        intro
+      </div>
+      <div class="apiArguments">
+        <span class="label label-success">Accepts</span>
+        <ul>
+          <li>
+            arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+            <p>details</p>
+          </li>
+          <li>
+            arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+            <p>details</p>
+          </li>
+        </ul>
+      </div>
+      <div class="apiSample">
+        <pre><code data-language="javascript">
+          _slate.nodes.removeRelationship();
+        </code></pre>
+      </div>
+      <div class="apiReturn">
+        <span class="label label-success">Returns</span> <span class="label">string</span>
+        <div class="apiReturnDetail">
+          return
+        </div>
+      </div>
+    </div>
+
+    <div class="apiSub" id="closeAllMenus_nodes">
+      <code data-language="javascript" class="apiHeader">.closeAllMenus()</code>
+      <div class="apiIntro">
+        intro
+      </div>
+      <div class="apiArguments">
+        <span class="label label-success">Accepts</span>
+        <ul>
+          <li>
+            arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+            <p>details</p>
+          </li>
+          <li>
+            arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+            <p>details</p>
+          </li>
+        </ul>
+      </div>
+      <div class="apiSample">
+        <pre><code data-language="javascript">
+          _slate.nodes.closeAllMenus();
+        </code></pre>
+      </div>
+      <div class="apiReturn">
+        <span class="label label-success">Returns</span> <span class="label">string</span>
+        <div class="apiReturnDetail">
+          return
+        </div>
+      </div>
+    </div>
+
+    <div class="apiSub" id="closeAllConnectors_nodes">
+      <code data-language="javascript" class="apiHeader">.closeAllConnectors()</code>
+      <div class="apiIntro">
+        intro
+      </div>
+      <div class="apiArguments">
+        <span class="label label-success">Accepts</span>
+        <ul>
+          <li>
+            arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+            <p>details</p>
+          </li>
+          <li>
+            arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+            <p>details</p>
+          </li>
+        </ul>
+      </div>
+      <div class="apiSample">
+        <pre><code data-language="javascript">
+          _slate.closeAllConnectors();
+        </code></pre>
+      </div>
+      <div class="apiReturn">
+        <span class="label label-success">Returns</span> <span class="label">string</span>
+        <div class="apiReturnDetail">
+          return
+        </div>
+      </div>
+    </div>
+
+    <div class="apiSub" id="one_nodes">
+      <code data-language="javascript" class="apiHeader">.one()</code>
+      <div class="apiIntro">
+        intro
+      </div>
+      <div class="apiArguments">
+        <span class="label label-success">Accepts</span>
+        <ul>
+          <li>
+            arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+            <p>details</p>
+          </li>
+          <li>
+            arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+            <p>details</p>
+          </li>
+        </ul>
+      </div>
+      <div class="apiSample">
+        <pre><code data-language="javascript">
+          _slate.nodes.one();
+        </code></pre>
+      </div>
+      <div class="apiReturn">
+        <span class="label label-success">Returns</span> <span class="label">string</span>
+        <div class="apiReturnDetail">
+          return
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row slatebox-segment" id="slate_canvas">
+
+      <div class="apiSub" id="zoom_canvas">
+        <code data-language="javascript" class="apiHeader">.zoom()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.zoom();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="center_canvas">
+        <code data-language="javascript" class="apiHeader">.center()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.center();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="move_canvas">
+        <code data-language="javascript" class="apiHeader">.move()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.move();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="scaleToFitNodes_canvas">
+        <code data-language="javascript" class="apiHeader">.scaleToFitNodes()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.scaleToFitNodes();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="centerOnNodes_canvas">
+        <code data-language="javascript" class="apiHeader">.centerOnNodes()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.centerOnNodes();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="resize_canvas">
+        <code data-language="javascript" class="apiHeader">.resize()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.resize();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="clear_canvas">
+        <code data-language="javascript" class="apiHeader">.clear()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.clear();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="wire_canvas">
+        <code data-language="javascript" class="apiHeader">.wire()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.wire();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="unwire_canvas">
+        <code data-language="javascript" class="apiHeader">.unwire()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.unwire();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="rawSVG_canvas">
+        <code data-language="javascript" class="apiHeader">.rawSVG()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.rawSVG();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="darken_canvas">
+        <code data-language="javascript" class="apiHeader">.darken()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.darken();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="lighten_canvas">
+        <code data-language="javascript" class="apiHeader">.lighten()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.lighten();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="get_canvas">
+        <code data-language="javascript" class="apiHeader">.get()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.get();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row slatebox-segment" id="slate_multiselect">
+
+      <div class="apiSub" id="init_multiselect">
+        <code data-language="javascript" class="apiHeader">.init()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.init();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="get_multiselect">
+        <code data-language="javascript" class="apiHeader">.get()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.get();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="get_multiselect">
+        <code data-language="javascript" class="apiHeader">.get()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.get();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="get_multiselect">
+        <code data-language="javascript" class="apiHeader">.get()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.get();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="get_multiselect">
+        <code data-language="javascript" class="apiHeader">.get()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.get();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="get_multiselect">
+        <code data-language="javascript" class="apiHeader">.get()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.get();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="get_multiselect">
+        <code data-language="javascript" class="apiHeader">.get()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.get();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+      <div class="apiSub" id="get_multiselect">
+        <code data-language="javascript" class="apiHeader">.get()</code>
+        <div class="apiIntro">
+          intro
+        </div>
+        <div class="apiArguments">
+          <span class="label label-success">Accepts</span>
+          <ul>
+            <li>
+              arg1 <span class="label label">object</span> <span class="label label-important">required</span>
+              <p>details</p>
+            </li>
+            <li>
+              arg2 <span class="label label">int</span> <span class="label label-info">optional</span> <span class="label">explain</span>
+              <p>details</p>
+            </li>
+          </ul>
+        </div>
+        <div class="apiSample">
+          <pre><code data-language="javascript">
+            _slate.canvas.get();
+          </code></pre>
+        </div>
+        <div class="apiReturn">
+          <span class="label label-success">Returns</span> <span class="label">string</span>
+          <div class="apiReturnDetail">
+            return
+          </div>
+        </div>
+      </div>
+
+  </div>
+  <div class="row slatebox-segment" id="slate_canvas">
+
+  </div>
+  <div class="row slatebox-segment" id="slate_message">
+
+  </div>
+
+  <!--node-->
+  <div class="row slatebox-segment" id="node_node">
+
+  </div>
+  <div class="row slatebox-segment" id="node_editor">
+
+  </div>
+  <div class="row slatebox-segment" id="node_images">
+
+  </div>
+  <div class="row slatebox-segment" id="node_links">
+
+  </div>
+  <div class="row slatebox-segment" id="node_menu">
+
+  </div>
+  <div class="row slatebox-segment" id="node_relationships">
+
+  </div>
+</template>
